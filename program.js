@@ -1,5 +1,5 @@
 let OSinfo = require('../modules/OSinfo');
-
+let calcTime = require('../modules/timeFormat');
 
 process.stdin.setEncoding('utf-8'); 
 
@@ -15,8 +15,11 @@ process.stdin.on('readable', function() {
         case '\hi':
             process.stdout.write('Hello\n');
             break;
-        case '/getOSinfo':
+        case '\getOSinfo':
             OSinfo.print();
+            break;
+        case '\getTime':
+            calcTime.print();
             break;
         case '\exit':
             process.stdout.write('Quitting app!\n');
